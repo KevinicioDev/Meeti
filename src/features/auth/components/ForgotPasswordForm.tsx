@@ -6,7 +6,7 @@
 import { useForm } from 'react-hook-form'
 
 // Importa componentes visuales reutilizables personalizados para estructurar el formulario.
-import { Form, FormError, FormInput, FormLabel, FormSubmit } from "@/src/shared/components/forms"
+import { Form, FormError, FormInput, FormLabel, FormSubmit } from "@/shared/components/forms"
 
 // Adaptador oficial para conectar esquemas de validación Zod con react-hook-form.
 import { zodResolver } from '@hookform/resolvers/zod'

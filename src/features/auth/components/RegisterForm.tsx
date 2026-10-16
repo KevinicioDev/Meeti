@@ -3,7 +3,7 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import toast from 'react-hot-toast'
-import { Form, FormError, FormInput, FormLabel, FormSubmit } from "@/src/shared/components/forms"
+import { Form, FormError, FormInput, FormLabel, FormSubmit } from "@/shared/components/forms"
 import { SignUpInput, SignUpSchema } from '../schemas/authSchema'
 import { signUpAction } from '../actions/auth-actions'
 

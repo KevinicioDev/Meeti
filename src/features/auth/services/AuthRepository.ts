@@ -1,4 +1,4 @@
-import { db } from "@/src/db";
+import { db } from "@/db";
 import { User } from "../types/auth.types";
 
 // Interfaz que funciona como un contrato para AuthRepository.

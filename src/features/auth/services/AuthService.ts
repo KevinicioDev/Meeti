@@ -1,4 +1,4 @@
-import { auth } from "@/src/lib/auth";
+import { auth } from "@/lib/auth";
 import { ForgotPasswordInput, SetPasswordInput, SignInInput, SignUpInput } from "../schemas/authSchema";
 import { authRepository, IAuthRepository } from "./AuthRepository";
 import { headers } from "next/headers";

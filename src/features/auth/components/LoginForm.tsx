@@ -2,7 +2,7 @@
 //Aplicar llaves en Form por que es un export nombrado
 import {useForm} from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import {Form, FormError, FormInput, FormLabel, FormSubmit} from "@/src/shared/components/forms"
+import {Form, FormError, FormInput, FormLabel, FormSubmit} from "@/shared/components/forms"
 import { SignInInput, SignInSchema } from '../schemas/authSchema'
 import { signInAction } from '../actions/auth-actions'
 import toast from 'react-hot-toast'

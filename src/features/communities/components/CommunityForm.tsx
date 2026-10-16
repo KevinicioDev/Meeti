@@ -3,6 +3,7 @@ import { FormError, FormInput, FormLabel, FormTextArea } from "@/shared/componen
 import { useFormContext } from "react-hook-form";
 import { CommunityInput } from "../schemas/communitySchema";
 
+import UploadImage from "@/shared/components/upload/UploadImage";
 export default function CommunityForm() {
 
     const {register, formState : {errors}} = useFormContext<CommunityInput>()//Via <> le podemos decir que tipo de dato va estar en esos register y errores
@@ -16,6 +17,9 @@ export default function CommunityForm() {
                 {...register('name')}
             />{/*revisar si existe un error y, si existe, mostrarlo.*/}
             {errors.name && <FormError>{errors.name.message}</FormError>}
+            
+            <FormLabel>Imagen Comunidad</FormLabel>
+            <UploadImage/>
 
             <FormLabel
                 htmlFor="description">Descripción Comunidad</FormLabel>

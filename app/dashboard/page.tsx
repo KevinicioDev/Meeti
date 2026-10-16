@@ -1,7 +1,7 @@
 // Importa tu función personalizada que verifica la sesión en la base de datos o cookies
-import { requireAuth } from "@/src/lib/auth-server";
+import { requireAuth } from "@/lib/auth-server";
 // Importa un componente visual para mantener el estilo de los títulos uniforme
-import Heading from "@/src/shared/components/typography/Heading";
+import Heading from "@/shared/components/typography/Heading";
 // Importa la herramienta de Next.js para forzar cambios de URL desde el servidor
 import { redirect } from "next/navigation";
 

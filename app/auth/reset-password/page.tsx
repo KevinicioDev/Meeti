@@ -1,6 +1,6 @@
-import SetPasswordForm from "@/src/features/auth/components/SetPasswordForm";
-import Heading from "@/src/shared/components/typography/Heading";
-import { generatePageTitle } from "@/src/shared/utils/metadata";
+import SetPasswordForm from "@/features/auth/components/SetPasswordForm";
+import Heading from "@/shared/components/typography/Heading";
+import { generatePageTitle } from "@/shared/utils/metadata";
 import { Metadata } from "next";
 import Link from "next/link";
 

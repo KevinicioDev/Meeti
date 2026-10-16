@@ -1,6 +1,6 @@
-import ForgotPasswordForm from "@/src/features/auth/components/ForgotPasswordForm";
-import Heading from "@/src/shared/components/typography/Heading";
-import { generatePageTitle } from "@/src/shared/utils/metadata";
+import ForgotPasswordForm from "@/features/auth/components/ForgotPasswordForm";
+import Heading from "@/shared/components/typography/Heading";
+import { generatePageTitle } from "@/shared/utils/metadata";
 import { Metadata } from "next";
 import Link from "next/link";
 

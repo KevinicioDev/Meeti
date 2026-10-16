@@ -12,7 +12,11 @@ class CommunityService {
 
     // Aquí agregas los métodos con lógica de negocio que llamarán los Actions/Controladores
     async createCommunity(data : CommunityInput, userId : string){
-
+        const community = await this.communityRepository.create({
+            ... data,//... aplanamos el objeto sacando sus valores y se asignan dentro de el objeto de create
+            createdBy : userId
+        })
+        return community
     }
 }
 
