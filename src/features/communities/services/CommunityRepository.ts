@@ -3,6 +3,7 @@
 import { db } from "@/db";
 import { InsertCommunity, SelectCommunity } from "../types/community.types";
 import { community } from "@/db/schema";
+import { eq } from "drizzle-orm";
 
 // 1. Contrato: Define qué operaciones existen (útil para tipado estricto y tests/mocks)
 export interface ICommunityRepository {
@@ -10,6 +11,7 @@ export interface ICommunityRepository {
     //Metodo para crear las comunidades
     //Primero se pone que se espera, en este caso el InsertCommunity que contiene todo esto
     create(data : InsertCommunity) : Promise<SelectCommunity>
+    findByUser(userId : string, limit?: number) : Promise<SelectCommunity[]>//Se le coloca el [] por que van a ser varias comunidades del usuario
 }
 
 // 2. Implementación: Ejecuta las consultas reales hacia la DB (Prisma, TypeORM, etc.)
@@ -19,6 +21,16 @@ class CommunityRepository implements ICommunityRepository {
         //array destructuring para tener un objeto []
         const [result] = await db.insert(community).values(data).returning()
         return result
+    }
+
+    async findByUser(userId: string, limit = 10): Promise<SelectCommunity[]> {
+        const communities = await db
+                                .select()
+                                .from(community)
+                                //Este eq tiene lado derecho y izquierdo para comparar
+                                .where(eq(community.createdBy, userId))//eq revisar que un valor sea iguala otro, en este caso lo de las comunidades
+                                .limit(limit)//Si se le pasa un limite lo reescribe si no pues 10 por default
+        return communities
     }
 }
 
